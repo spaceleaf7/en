@@ -1,0 +1,135 @@
+import type { RootData } from '../types';
+
+export const MOCK_ROOTS: RootData[] = [
+  {
+    id: 1,
+    rootText: "vis / vid",
+    meaning: "看、看见 (to see / look)",
+    words: [
+      {
+        wordId: 101,
+        word: "visible",
+        phonetic: "/ˈvɪzəbl/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=visible&type=2",
+        chineseMeaning: "adj. 可见的；明显的",
+        breakdown: "vis (看) + ible (可...的) → 能够被看见的",
+        exampleSentence: "The stars are clearly visible tonight.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=The+stars+are+clearly+visible+tonight.&type=2"
+      },
+      {
+        wordId: 102,
+        word: "visit",
+        phonetic: "/ˈvɪzɪt/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=visit&type=2",
+        chineseMeaning: "v./n. 拜访；参观；探望",
+        breakdown: "vis (看) + it (走、去) → 去看望 → 拜访",
+        exampleSentence: "We plan to visit our grandparents this weekend.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=We+plan+to+visit+our+grandparents+this+weekend.&type=2"
+      },
+      {
+        wordId: 103,
+        word: "evidence",
+        phonetic: "/ˈevɪdəns/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=evidence&type=2",
+        chineseMeaning: "n. 证据；证明；迹象",
+        breakdown: "e- (出) + vid (看) + -ence (名词后缀) → 能明显看出来的事实 → 证据",
+        exampleSentence: "There is no scientific evidence to support this claim.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=There+is+no+scientific+evidence+to+support+this+claim.&type=2"
+      },
+      {
+        wordId: 104,
+        word: "revise",
+        phonetic: "/rɪˈvaɪz/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=revise&type=2",
+        chineseMeaning: "v. 修改；复习；修正",
+        breakdown: "re- (再、重) + vis (看) + e → 重新审视查看 → 修改/复习",
+        exampleSentence: "He decided to revise his draft before submitting it.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=He+decided+to+revise+his+draft+before+submitting+it.&type=2"
+      }
+    ]
+  },
+  {
+    id: 2,
+    rootText: "path / -pathy",
+    meaning: "感受、痛苦、情感 (feeling / suffering)",
+    words: [
+      {
+        wordId: 201,
+        word: "sympathy",
+        phonetic: "/ˈsɪmpəθi/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=sympathy&type=2",
+        chineseMeaning: "n. 同情；同情心；赞同",
+        breakdown: "sym- (同、共同) + path (感受) + -y → 感同身受 → 同情",
+        exampleSentence: "I have deep sympathy for the victims of the disaster.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=I+have+deep+sympathy+for+the+victims+of+the+disaster.&type=2"
+      },
+      {
+        wordId: 202,
+        word: "empathy",
+        phonetic: "/ˈempəθi/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=empathy&type=2",
+        chineseMeaning: "n. 共情；共鸣；感同身受",
+        breakdown: "em- (在...之中) + path (感受) + -y → 融入他人的感受 → 共情",
+        exampleSentence: "Good leaders show empathy towards their team members.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=Good+leaders+show+empathy+towards+their+team+members.&type=2"
+      },
+      {
+        wordId: 203,
+        word: "apathy",
+        phonetic: "/ˈæpəθi/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=apathy&type=2",
+        chineseMeaning: "n. 漠不关心；冷漠；无兴趣",
+        breakdown: "a- (无、不) + path (情感) + -y → 没有情感 → 冷漠",
+        exampleSentence: "Widespread public apathy is a danger to democracy.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=Widespread+public+apathy+is+a+danger+to+democracy.&type=2"
+      },
+      {
+        wordId: 204,
+        word: "antipathy",
+        phonetic: "/ænˈtɪpəθi/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=antipathy&type=2",
+        chineseMeaning: "n. 反感；厌恶；对立情绪",
+        breakdown: "anti- (反对、相悖) + path (感受) + -y → 相反的恶感 → 反感",
+        exampleSentence: "He expressed a strong antipathy towards dishonest people.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=He+expressed+a+strong+antipathy+towards+dishonest+people.&type=2"
+      }
+    ]
+  },
+  {
+    id: 3,
+    rootText: "loqu / locut",
+    meaning: "说话、言语 (to speak / talk)",
+    words: [
+      {
+        wordId: 301,
+        word: "eloquent",
+        phonetic: "/ˈeləkwənt/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=eloquent&type=2",
+        chineseMeaning: "adj. 雄辩的；口才流利的；动人的",
+        breakdown: "e- (出) + loqu (说) + -ent → 把话生动说出来 → 雄辩的",
+        exampleSentence: "She gave an eloquent speech that moved the audience.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=She+gave+an+eloquent+speech+that+moved+the+audience.&type=2"
+      },
+      {
+        wordId: 302,
+        word: "loquacious",
+        phonetic: "/loʊˈkweɪʃəs/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=loquacious&type=2",
+        chineseMeaning: "adj. 话多的；健谈的；喋喋不休的",
+        breakdown: "loqu (说) + -acious (多...的) → 话非常多的",
+        exampleSentence: "After a glass of wine, he became quite loquacious.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=After+a+glass+of+wine+he+became+quite+loquacious.&type=2"
+      },
+      {
+        wordId: 303,
+        word: "circumlocution",
+        phonetic: "/ˌsɜːrkəmləˈkjuːʃn/",
+        phoneticAudio: "https://dict.youdao.com/dictvoice?audio=circumlocution&type=2",
+        chineseMeaning: "n. 迂回累赘的话；拐弯抹角",
+        breakdown: "circum- (绕圈) + locut (说) + -ion → 绕着弯子说 → 迂回",
+        exampleSentence: "Politicians often speak with circumlocution to avoid direct answers.",
+        exampleAudio: "https://dict.youdao.com/dictvoice?audio=Politicians+often+speak+with+circumlocution+to+avoid+direct+answers.&type=2"
+      }
+    ]
+  }
+];

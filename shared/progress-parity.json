@@ -1,0 +1,1614 @@
+{
+  "timezone": "Asia/Shanghai",
+  "scenarios": {
+    "逐级升到 5 级并封顶": {
+      "ops": [
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792202400000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792461600000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792720800000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792980000000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1793239200000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1793498400000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1793757600000
+        }
+      ],
+      "expected": {
+        "words": {
+          "101": {
+            "wordId": 101,
+            "rootId": 1,
+            "spell": {
+              "correct": 7,
+              "wrong": 0,
+              "streak": 7,
+              "level": 5,
+              "lastReviewAt": 1793757600000,
+              "nextReviewAt": 1795032000000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792202400000,
+            "studyMs": 0,
+            "avgResponseMs": 0,
+            "responseSamples": 0,
+            "audioPlays": 0,
+            "hintsUsed": 0,
+            "recentWrong": [],
+            "favorite": false,
+            "masteredAt": null
+          }
+        },
+        "daily": {
+          "2026-10-17": {
+            "date": "2026-10-17",
+            "activeMs": 0,
+            "newWords": 1,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792202400000,
+            "lastAt": 1792202400000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-20": {
+            "date": "2026-10-20",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792461600000,
+            "lastAt": 1792461600000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-23": {
+            "date": "2026-10-23",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792720800000,
+            "lastAt": 1792720800000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-26": {
+            "date": "2026-10-26",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792980000000,
+            "lastAt": 1792980000000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-29": {
+            "date": "2026-10-29",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1793239200000,
+            "lastAt": 1793239200000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-11-01": {
+            "date": "2026-11-01",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1793498400000,
+            "lastAt": 1793498400000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-11-04": {
+            "date": "2026-11-04",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1793757600000,
+            "lastAt": 1793757600000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "答错降级与错误写法": {
+      "ops": [
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792202400000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792288800000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "wrong",
+          "now": 1792375200000,
+          "answer": " visable "
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "wrong",
+          "now": 1792375201000,
+          "answer": "visibel"
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "wrong",
+          "now": 1792375202000,
+          "answer": ""
+        }
+      ],
+      "expected": {
+        "words": {
+          "101": {
+            "wordId": 101,
+            "rootId": 1,
+            "spell": {
+              "correct": 2,
+              "wrong": 3,
+              "streak": 0,
+              "level": 1,
+              "lastReviewAt": 1792375202000,
+              "nextReviewAt": 1792440000000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792202400000,
+            "studyMs": 0,
+            "avgResponseMs": 0,
+            "responseSamples": 0,
+            "audioPlays": 0,
+            "hintsUsed": 0,
+            "recentWrong": [
+              "visibel",
+              "visable"
+            ],
+            "favorite": false,
+            "masteredAt": null
+          }
+        },
+        "daily": {
+          "2026-10-17": {
+            "date": "2026-10-17",
+            "activeMs": 0,
+            "newWords": 1,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792202400000,
+            "lastAt": 1792202400000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-18": {
+            "date": "2026-10-18",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792288800000,
+            "lastAt": 1792288800000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-19": {
+            "date": "2026-10-19",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              101
+            ],
+            "masteredWords": 0,
+            "answers": 3,
+            "correct": 0,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792375200000,
+            "lastAt": 1792375202000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "提示等级影响升级": {
+      "ops": [
+        {
+          "op": "answer",
+          "wordId": 102,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792202400000,
+          "hintLevel": 3
+        },
+        {
+          "op": "answer",
+          "wordId": 102,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792288800000,
+          "hintLevel": 3
+        },
+        {
+          "op": "answer",
+          "wordId": 102,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792375200000,
+          "hintLevel": 1
+        },
+        {
+          "op": "answer",
+          "wordId": 102,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792461600000,
+          "hintLevel": 2
+        },
+        {
+          "op": "answer",
+          "wordId": 102,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "skip",
+          "now": 1792548000000
+        }
+      ],
+      "expected": {
+        "words": {
+          "102": {
+            "wordId": 102,
+            "rootId": 1,
+            "spell": {
+              "correct": 4,
+              "wrong": 0,
+              "streak": 4,
+              "level": 3,
+              "lastReviewAt": 1792548000000,
+              "nextReviewAt": 1792872000000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792202400000,
+            "studyMs": 0,
+            "avgResponseMs": 0,
+            "responseSamples": 0,
+            "audioPlays": 0,
+            "hintsUsed": 4,
+            "recentWrong": [],
+            "favorite": false,
+            "masteredAt": null
+          }
+        },
+        "daily": {
+          "2026-10-17": {
+            "date": "2026-10-17",
+            "activeMs": 0,
+            "newWords": 1,
+            "reviewedWordIds": [
+              102
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792202400000,
+            "lastAt": 1792202400000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-18": {
+            "date": "2026-10-18",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              102
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792288800000,
+            "lastAt": 1792288800000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-19": {
+            "date": "2026-10-19",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              102
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792375200000,
+            "lastAt": 1792375200000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-20": {
+            "date": "2026-10-20",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              102
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792461600000,
+            "lastAt": 1792461600000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-21": {
+            "date": "2026-10-21",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              102
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 0,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792548000000,
+            "lastAt": 1792548000000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "自评与双维度掌握": {
+      "ops": [
+        {
+          "op": "answer",
+          "wordId": 201,
+          "rootId": 2,
+          "skill": "self",
+          "result": "correct",
+          "now": 1792202400000
+        },
+        {
+          "op": "answer",
+          "wordId": 201,
+          "rootId": 2,
+          "skill": "self",
+          "result": "correct",
+          "now": 1792288800000
+        },
+        {
+          "op": "answer",
+          "wordId": 201,
+          "rootId": 2,
+          "skill": "self",
+          "result": "correct",
+          "now": 1792375200000
+        },
+        {
+          "op": "answer",
+          "wordId": 201,
+          "rootId": 2,
+          "skill": "self",
+          "result": "correct",
+          "now": 1792461600000
+        },
+        {
+          "op": "answer",
+          "wordId": 201,
+          "rootId": 2,
+          "skill": "meaning",
+          "result": "correct",
+          "now": 1792634400000
+        },
+        {
+          "op": "answer",
+          "wordId": 201,
+          "rootId": 2,
+          "skill": "spell",
+          "result": "wrong",
+          "now": 1792720800000,
+          "answer": "sympaty"
+        }
+      ],
+      "expected": {
+        "words": {
+          "201": {
+            "wordId": 201,
+            "rootId": 2,
+            "spell": {
+              "correct": 4,
+              "wrong": 1,
+              "streak": 0,
+              "level": 1,
+              "lastReviewAt": 1792720800000,
+              "nextReviewAt": 1792785600000
+            },
+            "meaning": {
+              "correct": 5,
+              "wrong": 0,
+              "streak": 5,
+              "level": 5,
+              "lastReviewAt": 1792634400000,
+              "nextReviewAt": 1793908800000
+            },
+            "firstSeenAt": 1792202400000,
+            "studyMs": 0,
+            "avgResponseMs": 0,
+            "responseSamples": 0,
+            "audioPlays": 0,
+            "hintsUsed": 0,
+            "recentWrong": [
+              "sympaty"
+            ],
+            "favorite": false,
+            "masteredAt": null
+          }
+        },
+        "daily": {
+          "2026-10-17": {
+            "date": "2026-10-17",
+            "activeMs": 0,
+            "newWords": 1,
+            "reviewedWordIds": [
+              201
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792202400000,
+            "lastAt": 1792202400000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-18": {
+            "date": "2026-10-18",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              201
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792288800000,
+            "lastAt": 1792288800000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-19": {
+            "date": "2026-10-19",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              201
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792375200000,
+            "lastAt": 1792375200000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-20": {
+            "date": "2026-10-20",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              201
+            ],
+            "masteredWords": 1,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792461600000,
+            "lastAt": 1792461600000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-22": {
+            "date": "2026-10-22",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              201
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792634400000,
+            "lastAt": 1792634400000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-23": {
+            "date": "2026-10-23",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [
+              201
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 0,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792720800000,
+            "lastAt": 1792720800000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "凌晨 4 点换日": {
+      "ops": [
+        {
+          "op": "answer",
+          "wordId": 301,
+          "rootId": 3,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792267140000
+        },
+        {
+          "op": "answer",
+          "wordId": 302,
+          "rootId": 3,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792267200000
+        },
+        {
+          "op": "answer",
+          "wordId": 301,
+          "rootId": 3,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792339140000
+        }
+      ],
+      "expected": {
+        "words": {
+          "301": {
+            "wordId": 301,
+            "rootId": 3,
+            "spell": {
+              "correct": 2,
+              "wrong": 0,
+              "streak": 2,
+              "level": 2,
+              "lastReviewAt": 1792339140000,
+              "nextReviewAt": 1792440000000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792267140000,
+            "studyMs": 0,
+            "avgResponseMs": 0,
+            "responseSamples": 0,
+            "audioPlays": 0,
+            "hintsUsed": 0,
+            "recentWrong": [],
+            "favorite": false,
+            "masteredAt": null
+          },
+          "302": {
+            "wordId": 302,
+            "rootId": 3,
+            "spell": {
+              "correct": 1,
+              "wrong": 0,
+              "streak": 1,
+              "level": 1,
+              "lastReviewAt": 1792267200000,
+              "nextReviewAt": 1792353600000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792267200000,
+            "studyMs": 0,
+            "avgResponseMs": 0,
+            "responseSamples": 0,
+            "audioPlays": 0,
+            "hintsUsed": 0,
+            "recentWrong": [],
+            "favorite": false,
+            "masteredAt": null
+          }
+        },
+        "daily": {
+          "2026-10-17": {
+            "date": "2026-10-17",
+            "activeMs": 0,
+            "newWords": 1,
+            "reviewedWordIds": [
+              301
+            ],
+            "masteredWords": 0,
+            "answers": 1,
+            "correct": 1,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792267140000,
+            "lastAt": 1792267140000,
+            "hourly": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-18": {
+            "date": "2026-10-18",
+            "activeMs": 0,
+            "newWords": 1,
+            "reviewedWordIds": [
+              302,
+              301
+            ],
+            "masteredWords": 0,
+            "answers": 2,
+            "correct": 2,
+            "audioPlays": 0,
+            "sessions": 0,
+            "firstAt": 1792267200000,
+            "lastAt": 1792339140000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      }
+    },
+    "时长分摊、发音与打开次数": {
+      "ops": [
+        {
+          "op": "session",
+          "now": 1792202399000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792202400000,
+          "responseMs": 2500
+        },
+        {
+          "op": "answer",
+          "wordId": 102,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "wrong",
+          "now": 1792202401000,
+          "responseMs": 4001,
+          "answer": "x"
+        },
+        {
+          "op": "time",
+          "ms": 15001,
+          "now": 1792202402000,
+          "wordIds": [
+            101,
+            102,
+            999
+          ]
+        },
+        {
+          "op": "time",
+          "ms": 0,
+          "now": 1792202403000,
+          "wordIds": [
+            101
+          ]
+        },
+        {
+          "op": "audio",
+          "wordId": 101,
+          "now": 1792202404000
+        },
+        {
+          "op": "audio",
+          "wordId": 999,
+          "now": 1792202405000
+        },
+        {
+          "op": "audio",
+          "wordId": null,
+          "now": 1792202406000
+        },
+        {
+          "op": "answer",
+          "wordId": 101,
+          "rootId": 1,
+          "skill": "spell",
+          "result": "correct",
+          "now": 1792202407000,
+          "responseMs": 1500
+        },
+        {
+          "op": "session",
+          "now": 1792288800000
+        }
+      ],
+      "expected": {
+        "words": {
+          "101": {
+            "wordId": 101,
+            "rootId": 1,
+            "spell": {
+              "correct": 2,
+              "wrong": 0,
+              "streak": 2,
+              "level": 2,
+              "lastReviewAt": 1792202407000,
+              "nextReviewAt": 1792353600000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792202400000,
+            "studyMs": 7501,
+            "avgResponseMs": 2000,
+            "responseSamples": 2,
+            "audioPlays": 1,
+            "hintsUsed": 0,
+            "recentWrong": [],
+            "favorite": false,
+            "masteredAt": null
+          },
+          "102": {
+            "wordId": 102,
+            "rootId": 1,
+            "spell": {
+              "correct": 0,
+              "wrong": 1,
+              "streak": 0,
+              "level": 1,
+              "lastReviewAt": 1792202401000,
+              "nextReviewAt": 1792267200000
+            },
+            "meaning": {
+              "correct": 0,
+              "wrong": 0,
+              "streak": 0,
+              "level": 0,
+              "lastReviewAt": 0,
+              "nextReviewAt": 0
+            },
+            "firstSeenAt": 1792202401000,
+            "studyMs": 7501,
+            "avgResponseMs": 4001,
+            "responseSamples": 1,
+            "audioPlays": 0,
+            "hintsUsed": 0,
+            "recentWrong": [
+              "x"
+            ],
+            "favorite": false,
+            "masteredAt": null
+          }
+        },
+        "daily": {
+          "2026-10-17": {
+            "date": "2026-10-17",
+            "activeMs": 15001,
+            "newWords": 2,
+            "reviewedWordIds": [
+              101,
+              102
+            ],
+            "masteredWords": 0,
+            "answers": 3,
+            "correct": 2,
+            "audioPlays": 3,
+            "sessions": 1,
+            "firstAt": 1792202399000,
+            "lastAt": 1792202407000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "2026-10-18": {
+            "date": "2026-10-18",
+            "activeMs": 0,
+            "newWords": 0,
+            "reviewedWordIds": [],
+            "masteredWords": 0,
+            "answers": 0,
+            "correct": 0,
+            "audioPlays": 0,
+            "sessions": 1,
+            "firstAt": 1792288800000,
+            "lastAt": 1792288800000,
+            "hourly": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[project]
+name = "etymomind-backend"
+version = "0.1.0"
+description = "EtymoMind 词根思维导图背单词 - 后端 API"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.143.3",
+    "uvicorn[standard]==0.54.0",
+    "sqlalchemy==2.1.4",
+    "pymysql==1.2.3",
+    "cryptography==50.0.2", # PyMySQL 连接 MySQL 8 默认的 caching_sha2_password 认证需要
+    "alembic==1.20.0",
+    "pydantic==2.14.1",
+    "pydantic-settings==2.16.0",
+    "pyjwt==2.15.1",
+    "pwdlib[argon2]==0.3.1",
+    "tzdata==2026.5", # Windows 没有系统时区库，zoneinfo 需要它
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "httpx==0.28.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+addopts = "-q"
+
+[tool.uv]
+package = false

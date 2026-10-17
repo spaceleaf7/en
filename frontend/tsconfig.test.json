@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo",
+    // 测试与脚本在 Node 中运行，可以使用 node:fs 等 API；应用代码不包含 Node 类型
+    "types": ["vite/client", "node"]
+  },
+  "include": ["src/**/*.test.ts", "scripts"]
+}
