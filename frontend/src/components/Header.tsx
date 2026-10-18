@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import type { StudyMode } from '../types';
 import type { User } from '../api/endpoints';
 import type { SyncStatus } from '../hooks/useProgress';
+import type { SettingsFocus } from './SettingsModal';
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,6 +16,7 @@ import {
   LogOut,
   ChevronDown,
   UserCog,
+  KeyRound,
 } from 'lucide-react';
 
 /** 聚焦用户菜单的第 index 项，越界时首尾循环（-1 表示末项） */
@@ -40,7 +42,8 @@ interface Props {
   pendingCount: number;
   onSync: () => void;
   onLogout: () => void;
-  onOpenSettings: () => void;
+  onOpenSettings: (focus?: SettingsFocus) => void;
+  onOpenChangePassword: () => void;
 }
 
 const SYNC_LABEL: Record<SyncStatus, string> = {
@@ -67,6 +70,7 @@ export const Header: React.FC<Props> = ({
   onSync,
   onLogout,
   onOpenSettings,
+  onOpenChangePassword,
 }) => {
   const SyncIcon = syncStatus === 'syncing' ? RefreshCw : syncStatus === 'idle' ? Cloud : CloudOff;
   const syncTitle =
@@ -271,10 +275,21 @@ export const Header: React.FC<Props> = ({
                 className="user-menu-item"
                 onClick={() => {
                   closeMenu(false);
-                  onOpenSettings();
+                  onOpenSettings('profile');
                 }}
               >
                 <UserCog size={16} aria-hidden="true" /> 个人设置
+              </button>
+              <button
+                role="menuitem"
+                tabIndex={-1}
+                className="user-menu-item"
+                onClick={() => {
+                  closeMenu(false);
+                  onOpenChangePassword();
+                }}
+              >
+                <KeyRound size={16} aria-hidden="true" /> 修改密码
               </button>
               <div className="user-menu-sep" role="separator" />
               <button

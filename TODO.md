@@ -39,11 +39,12 @@
 
 ### 1.3 修改密码
 
-- [ ] `api/endpoints.ts` 新增 `changePassword(oldPassword, newPassword)`，请求 `POST /auth/change-password`
-- [ ] 设置弹窗加"修改密码"区块：原密码、新密码、确认新密码；新密码规则复用 `LoginPage.tsx` 里的校验（建议抽到 `utils/password.ts`）
-- [ ] 改密前先 `progress.syncNow()`，避免未上传的记录被卡在本地
-- [ ] 成功后：`setAccessToken(null)` → 提示"密码已修改，请重新登录" → 回到登录页
-- [ ] 400「原密码不正确」显示在表单内
+- [x] `api/endpoints.ts` 新增 `changePassword(oldPassword, newPassword)`，请求 `POST /auth/change-password`
+- [x] `utils/password.ts` 新增密码校验函数和规则列表，从 `LoginPage.tsx` 和后端规则对齐（8位+字母+数字）
+- [x] 设置弹窗加"修改密码"区块：原密码、新密码（含实时规则提示）、确认新密码；三个输入框各有眼睛按钮
+- [x] 改密前先 `progress.syncNow()`，避免未上传的记录被卡在本地
+- [x] 成功后：`setAccessToken(null)` → 调 `onLogout()` → 回到登录页
+- [x] 400「原密码不正确」显示在表单内；网络失败也显示内联错误，不关闭弹窗
 
 ### 1.4 入口
 

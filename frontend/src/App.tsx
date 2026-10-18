@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { MindMapBoard } from './components/MindMapBoard';
 import { StatsModal } from './components/StatsModal';
 import { SettingsModal, type SettingsFocus } from './components/SettingsModal';
+import { ChangePasswordModal } from './components/ChangePasswordModal';
 import { checkWordAnswer, checkMeaningAnswer } from './utils/grading';
 import { useProgress } from './hooks/useProgress';
 import { useActiveTimer } from './hooks/useActiveTimer';
@@ -35,6 +36,9 @@ export function StudyApp({ user, roots, onLogout, onUserChange }: StudyProps) {
   const [renderTrigger, setRenderTrigger] = useState(0);
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [settingsFocus, setSettingsFocus] = useState<SettingsFocus | null>(null);
+  const [isPwdOpen, setIsPwdOpen] = useState(false);
+  // 稳定引用：SettingsModal 的 Esc 监听依赖它
+  const closeSettings = useCallback(() => setSettingsFocus(null), []);
   const [notice, setNotice] = useState<{ msg: string; type: NoticeType } | null>(null);
 
   const startTimeRef = useRef(0);
@@ -43,8 +47,6 @@ export function StudyApp({ user, roots, onLogout, onUserChange }: StudyProps) {
 
   const progress = useProgress(user.id, roots);
   const { addTime } = progress;
-  // 稳定引用：SettingsModal 的 Esc 监听依赖它
-  const closeSettings = useCallback(() => setSettingsFocus(null), []);
 
   // 有效学习时长：平摊到当前词根下已学过的单词
   const currentWordIdsRef = useRef<number[]>([]);
@@ -203,7 +205,8 @@ export function StudyApp({ user, roots, onLogout, onUserChange }: StudyProps) {
         pendingCount={progress.pendingCount}
         onSync={() => void progress.syncNow()}
         onLogout={handleLogout}
-        onOpenSettings={() => setSettingsFocus('profile')}
+        onOpenSettings={(focus) => setSettingsFocus(focus ?? 'profile')}
+        onOpenChangePassword={() => setIsPwdOpen(true)}
       />
 
       <main className="main-content">
@@ -292,6 +295,15 @@ export function StudyApp({ user, roots, onLogout, onUserChange }: StudyProps) {
           onSaveSettings={progress.setSettings}
           onUserChange={onUserChange}
           onClose={closeSettings}
+        />
+      )}
+
+      {isPwdOpen && (
+        <ChangePasswordModal
+          username={user.username}
+          onClose={() => setIsPwdOpen(false)}
+          onLogout={onLogout}
+          syncNow={() => progress.syncNow()}
         />
       )}
     </div>

@@ -181,7 +181,7 @@ function renderFavoriteBtnHtml(d: MindMapCustomNodeData): string {
       <svg width="17" height="17" viewBox="0 0 24 24" fill="${on ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <path d="${STAR_PATH}"></path>
       </svg>
-      <span class="favorite-label">收藏</span>
+      <span class="favorite-label">${on ? '已收藏' : '收藏'}</span>
     </button>`;
 }
 

@@ -92,3 +92,18 @@ export const syncProgress = (body: SyncIn, keepalive = false) =>
   request<SyncOut>('/progress/sync', { method: 'POST', body, keepalive });
 
 export const getProgress = (since: number) => request<SyncOut>(`/progress?since=${since}`);
+
+// ───────────────────────── 统计（预留，目前前端本地计算） ─────────────────────────
+// TODO(3.0): 方案 B/C 确认后启用，替换本地计算
+export const getStatsDashboard = () => request<unknown>('/stats/dashboard');
+export const getStatsTrend = () => request<unknown>('/stats/trend');
+export const getStatsHourly = () => request<unknown>('/stats/hourly');
+export const getStatsForecast = () => request<unknown>('/stats/forecast');
+
+// ───────────────────────── 密码 ─────────────────────────
+
+export const changePassword = (oldPassword: string, newPassword: string) =>
+  request<void>('/auth/change-password', {
+    method: 'POST',
+    body: { oldPassword, newPassword },
+  });
