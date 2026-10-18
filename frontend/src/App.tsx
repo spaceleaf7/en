@@ -219,6 +219,13 @@ export function StudyApp({ user, roots, onLogout, onUserChange }: StudyProps) {
           </div>
         )}
 
+        {mode === 3 && (
+          <div className="canvas-hint" aria-hidden="true">
+            <span className="canvas-hint-tag">词根探索</span>
+            <span className="canvas-hint-text">顺着一个词根，连接一整片词汇。</span>
+          </div>
+        )}
+
         <MindMapBoard
           currentRoot={currentRoot}
           mode={mode}
@@ -227,6 +234,7 @@ export function StudyApp({ user, roots, onLogout, onUserChange }: StudyProps) {
           onInputChange={handleInputChange}
           onSubmit={handleSubmit}
           onAudioPlay={progress.playAudio}
+          onFavorite={progress.favorite}
           renderTrigger={renderTrigger}
         />
 

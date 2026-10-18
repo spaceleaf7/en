@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Maximize, Minus, Move, Plus } from 'lucide-react';
 import MindMap from 'simple-mind-map';
 import RainbowLines from 'simple-mind-map/src/plugins/RainbowLines.js';
 import type { RootData, StudyMode, AnswerMap } from '../types';
@@ -15,8 +16,14 @@ interface Props {
   onSubmit: () => void;
   /** 播放发音；wordId 为发音所属单词 */
   onAudioPlay?: (wordId: number | undefined) => void;
+  /** 切换单词收藏（仅浏览模式渲染星标） */
+  onFavorite?: (wordId: number, rootId: number) => void;
   renderTrigger: number;
 }
+
+// 与 simple-mind-map 默认的 minZoomRatio / maxZoomRatio（20% / 400%）一致，用于禁用缩放按钮
+const MIN_ZOOM = 0.2;
+const MAX_ZOOM = 4;
 
 // 彩虹分支：每个单词分支（第2层及其子孙连线）依次取一种颜色
 // usePlugin 是 simple-mind-map 的插件注册方法，并非 React Hook
@@ -64,11 +71,14 @@ export const MindMapBoard: React.FC<Props> = ({
   onInputChange,
   onSubmit,
   onAudioPlay,
+  onFavorite,
   renderTrigger,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mindMapInstance = useRef<MindMap | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  // 当前缩放比例，由画布的 scale 事件同步（滚轮缩放、自适应都会触发）
+  const [zoom, setZoom] = useState(1);
 
   // 输入时不重绘脑图（避免失焦），重绘时从 ref 读取最新作答
   const latestRef = useRef({ currentRoot, mode, answers, progress });
@@ -107,9 +117,13 @@ export const MindMapBoard: React.FC<Props> = ({
       },
       // 连线与主题清空：彻底消除底层 SVG 形状节点自带的默认边框与背景，避免双重边框！
       themeConfig: {
+        // 画布透明，露出 .app-container 的渐变背景
+        backgroundColor: 'transparent',
         lineColor: '#60a5fa',
         lineWidth: 2.5,
         lineStyle: 'curve',
+        // 曲线模式下根节点连线默认从节点中心出发；词根卡是半透明的，会透出卡片内的线段，改为从右边缘出发
+        rootLineStartPositionKeepSameInCurve: true,
         // 1级根节点：去掉底层自带形状与边框
         root: {
           fillColor: 'transparent',
@@ -135,6 +149,8 @@ export const MindMapBoard: React.FC<Props> = ({
     });
 
     mindMapInstance.current = mm;
+    const onScale = (scale: number) => setZoom(scale);
+    mm.on('scale', onScale);
     renderedKeyRef.current = '';
     fittedKeyRef.current = `${root.id}-${initMode}`;
     const cancelFit = scheduleFit(mm);
@@ -152,6 +168,7 @@ export const MindMapBoard: React.FC<Props> = ({
     return () => {
       cancelFit();
       observer.disconnect();
+      mm.off('scale', onScale);
       mm.destroy();
       mindMapInstance.current = null;
     };
@@ -183,9 +200,17 @@ export const MindMapBoard: React.FC<Props> = ({
     return scheduleFit(mm);
   }, [currentRoot, mode, renderTrigger, progressKey]);
 
-  // 3. 事件委托：处理发音、填空输入与键盘操作
+  // 3. 事件委托：处理发音、收藏、填空输入与键盘操作
   const handleClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
+    const favoriteBtn = target.closest('.favorite-btn');
+    if (favoriteBtn) {
+      e.stopPropagation();
+      const wordId = Number(favoriteBtn.getAttribute('data-word-id'));
+      const rootId = Number(favoriteBtn.getAttribute('data-root-id'));
+      if (wordId > 0) onFavorite?.(wordId, rootId);
+      return;
+    }
     const audioBtn = target.closest('.audio-btn');
     if (audioBtn) {
       e.stopPropagation();
@@ -233,14 +258,42 @@ export const MindMapBoard: React.FC<Props> = ({
     else target.blur();
   };
 
+  // 4. 缩放控件：以画布中心缩放；最右侧按钮恢复自适应
+  const zoomOut = () => mindMapInstance.current?.view.narrow();
+  const zoomIn = () => mindMapInstance.current?.view.enlarge();
+  const zoomFit = () => {
+    if (mindMapInstance.current) fitToScreenCenter(mindMapInstance.current);
+  };
+
   return (
-    <div
-      ref={containerRef}
-      className="mindmap-container"
-      onClick={handleClick}
-      onInput={handleInput}
-      onKeyDown={handleKeyDown}
-    />
+    <>
+      {/* 容器内部由 simple-mind-map 接管（初始化时会清空），控件只能放在它外面 */}
+      <div
+        ref={containerRef}
+        className="mindmap-container"
+        onClick={handleClick}
+        onInput={handleInput}
+        onKeyDown={handleKeyDown}
+      />
+
+      <div className="canvas-view-hint" aria-hidden="true">
+        <Move size={14} />
+        <span>共 {currentRoot.words.length} 个单词 · 拖动画布查看，滚轮缩放</span>
+      </div>
+
+      <div className="zoom-control" role="group" aria-label="画布缩放">
+        <button className="zoom-btn" onClick={zoomOut} disabled={zoom <= MIN_ZOOM + 0.001} title="缩小" aria-label="缩小">
+          <Minus size={14} />
+        </button>
+        <span className="zoom-value" aria-live="polite">{Math.round(zoom * 100)}%</span>
+        <button className="zoom-btn" onClick={zoomIn} disabled={zoom >= MAX_ZOOM - 0.001} title="放大" aria-label="放大">
+          <Plus size={14} />
+        </button>
+        <button className="zoom-btn" onClick={zoomFit} title="适应屏幕" aria-label="适应屏幕">
+          <Maximize size={14} />
+        </button>
+      </div>
+    </>
   );
 };
 

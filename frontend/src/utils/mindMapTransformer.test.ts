@@ -1,7 +1,7 @@
 // @vitest-environment happy-dom
 import { describe, expect, it } from 'vitest';
 import { createCustomNodeContent, transformToMindMap } from './mindMapTransformer';
-import { createInitialState, recordAnswer } from '../store/progressCore';
+import { createInitialState, recordAnswer, setFavorite } from '../store/progressCore';
 import { MOCK_ROOTS } from '../mock/roots';
 
 const T0 = new Date(2026, 9, 17, 10, 0, 0).getTime();
@@ -37,6 +37,25 @@ describe('transformToMindMap 学习进度', () => {
     const html = createCustomNodeContent(fakeNode(tree.data)).innerHTML;
     expect(html).toContain(`已掌握 0/${root.words.length}`);
     expect(html).toContain('待复习 1');
+  });
+
+  it('收藏星标只在浏览模式显示，并反映收藏状态', () => {
+    const s = createInitialState();
+    const wordHtml = (state: typeof s, mode: 1 | 2 | 3) =>
+      createCustomNodeContent(fakeNode(transformToMindMap(root, mode, {}, state, T0).children[0].data)).innerHTML;
+
+    const off = wordHtml(s, 3);
+    expect(off).toContain('class="favorite-btn"');
+    expect(off).toContain(`data-root-id="${root.id}"`);
+    expect(off).toContain('aria-pressed="false"');
+
+    const fav = setFavorite(s, root.words[0].wordId, root.id, true, T0);
+    const on = wordHtml(fav, 3);
+    expect(on).toContain('class="favorite-btn on"');
+    expect(on).toContain('aria-pressed="true"');
+    expect(on).toContain('aria-label="取消收藏"');
+
+    expect(wordHtml(fav, 2)).not.toContain('favorite-btn');
   });
 
   it('不传进度时不渲染进度元素', () => {

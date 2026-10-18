@@ -88,6 +88,7 @@ export function transformToMindMap(
         // 2级节点：单词（模式1填空）
         {
           level: 2,
+          rootId: root.id,
           wordId: w.wordId,
           word: w.word,
           progress: progress ? getProgressView(progress, w.wordId, now) : undefined,
@@ -167,6 +168,23 @@ function renderProgressBadgeHtml(view?: WordProgressView): string {
   return `<span class="word-progress" title="${label}"><span class="level-dots">${dots}</span>${tag}</span>`;
 }
 
+const STAR_PATH =
+  'M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z';
+
+/** 收藏星标：只在浏览模式渲染，避免默写 / 考核时误触；绝对定位，切换状态不改变节点宽度 */
+function renderFavoriteBtnHtml(d: MindMapCustomNodeData): string {
+  if (d.mode !== 3 || !d.progress || d.wordId === undefined) return '';
+  const on = d.progress.favorite;
+  const label = on ? '取消收藏' : '收藏单词';
+  return `
+    <button class="favorite-btn${on ? ' on' : ''}" data-word-id="${d.wordId}" data-root-id="${d.rootId ?? ''}" aria-pressed="${on}" aria-label="${label}" title="${label}">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="${on ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="${STAR_PATH}"></path>
+      </svg>
+      <span class="favorite-label">收藏</span>
+    </button>`;
+}
+
 function renderRootSummaryHtml(summary?: RootSummary): string {
   if (!summary) return '';
   const pct = summary.total ? Math.round((summary.mastered / summary.total) * 100) : 0;
@@ -219,6 +237,7 @@ export function createCustomNodeContent(node: any): HTMLElement {
       // 1级：词根本体根节点
       container.innerHTML = `
         <div class="node-card node-level-1">
+          <div class="node-root-tag">ROOT · 词根</div>
           <div class="node-root-title">${escapeHtml(customData.title || '')}</div>
           <div class="node-root-meaning">${escapeHtml(customData.subTitle || '')}</div>
           ${renderRootSummaryHtml(customData.rootSummary)}
@@ -240,10 +259,12 @@ export function createCustomNodeContent(node: any): HTMLElement {
           placeholder: '输入单词...',
         });
       } else {
+        const favoriteHtml = renderFavoriteBtnHtml(customData);
         container.innerHTML = `
-          <div class="node-card node-uniform-box node-level-2">
+          <div class="node-card node-uniform-box node-level-2${favoriteHtml ? ' has-fav' : ''}">
             <span class="node-word-text">${escapeHtml(customData.word || '')}</span>
             ${renderProgressBadgeHtml(customData.progress)}
+            ${favoriteHtml}
           </div>
         `;
       }
@@ -256,10 +277,9 @@ export function createCustomNodeContent(node: any): HTMLElement {
         <div class="node-card node-uniform-box node-level-3">
           <span class="node-phonetic-text">${escapeHtml(customData.phonetic || '')}</span>
           <button class="audio-btn" data-audio="${encodeURI(customData.phoneticAudio || '')}" data-word-id="${customData.wordId ?? ''}" title="播放标准发音" aria-label="播放标准发音">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"></path>
             </svg>
           </button>
         </div>
@@ -309,7 +329,7 @@ export function createCustomNodeContent(node: any): HTMLElement {
             <span class="quote-mark">”</span>
           </div>
           <button class="audio-btn sentence-audio" data-audio="${encodeURI(customData.exampleAudio || '')}" data-word-id="${customData.wordId ?? ''}" title="朗读全句" aria-label="朗读全句">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
               <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
               <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
